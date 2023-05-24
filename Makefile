@@ -5,7 +5,7 @@ OS         := $(shell cat /etc/issue)
 DRIVER_BRANCH := $(shell nvidia-smi | grep Driver | cut -f 3 -d' ' | cut -f 1 -d '.')
 
 # Location of the CUDA Toolkit
-CUDA_PATH ?= "/usr/local/cuda-12.1"
+CUDA_PATH ?= "/usr/local/cuda"
 
 ifeq (${ARCH},$(filter ${ARCH},32 64))
     # If correct architecture and libnvidia-ml library is not found 

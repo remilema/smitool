@@ -67,6 +67,9 @@ static int GetInfo(int index)
         fprintf(stderr, "Failed to get memory temperature %i: %s\n", index, 
             NVML_SUCCESS == result ? nvmlErrorString(memoryTempFieldValueArray[0].nvmlReturn) : nvmlErrorString(result));
     }
+    else {
+        memoryTemperature = memoryTempFieldValueArray[0].value.uiVal;
+    }
 
     // power.draw
     result = nvmlDeviceGetPowerUsage(device, &power);
